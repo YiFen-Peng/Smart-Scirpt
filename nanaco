@@ -1,6 +1,7 @@
+<a href="" id="final_link">Final Link</a>
+<div id="qr"></div>
+
 <script type="text/javascript">
-  
-    document.getElementById('input_url').innerHTML = window.location.href;
 
     //OneLink引数
     var oneLinkURL = "https://nanaco.onelink.me/l1zE";
@@ -32,8 +33,8 @@
     
       var result_url = AF_SMART_SCRIPT_RESULT.clickURL;
       if (result_url) {
-            document.getElementById(‘final_link').setAttribute('href', result_url);      
-            window.AF_SMART_SCRIPT.displayQrCode(“qr”);
+            document.getElementById('final_link').setAttribute('href', result_url);      
+            window.AF_SMART_SCRIPT.displayQrCode("qr");
             window.AF_SMART_SCRIPT.fireImpressionsLink();            
     }
 
