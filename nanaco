@@ -1,6 +1,7 @@
+<a href="" id="final_link">Final Link</a>
+<div id="qr"></div>
+
 <script type="text/javascript">
-  
-    document.getElementById('input_url').innerHTML = window.location.href;
 
     //OneLink引数
     var oneLinkURL = "https://nanaco.onelink.me/l1zE";
@@ -35,6 +36,7 @@
             document.getElementById('final_link').setAttribute('href', result_url);      
             window.AF_SMART_SCRIPT.displayQrCode("qr");
             window.AF_SMART_SCRIPT.fireImpressionsLink();   // [オプション]impression計測(ページロードの度に計測される) 
+
     }
 
   </script>
