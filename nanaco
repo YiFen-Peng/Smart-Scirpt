@@ -1,4 +1,4 @@
-  <script>
+<script type="text/javascript">
   
     document.getElementById('input_url').innerHTML = window.location.href;
 
@@ -13,27 +13,31 @@
     var custom_ss_ui = {paramKsource_lpey:"af_ss_ui",defaultValue:"true"};
     var custom_ss_gtm_ui = {paramKey:"af_ss_gtm_ui",defaultValue:"true"};
 
-    //OneLink生成
-    var result = window.AF_SMART_SCRIPT.generateOneLinkURL({
-    oneLinkURL: oneLinkURL,
-    afParameters: {
-        mediaSource: mediaSource,
-        afCustom: [
-            custom_ss_ui,
-            custom_ss_gtm_ui
+    // 定義されたパラメータマッチングリストを基にOneLinkを生成
+    AF_SMART_SCRIPT_RESULT = window.AF_SMART_SCRIPT.generateOneLinkURL({
+        oneLinkURL: oneLinkURL,
+        afParameters: {
+            mediaSource: mediaSource,
+            campaign: campaign,
+            adSet: adSet,
+            ad: ad,
+            channel: channel,
+            googleClickIdKey: googleClickIdKey,
+            afCustom: [
+                custom_ss_ui,
+                custom_ss_gtm_ui
             ]
-      }
-    })
+        }
+    });
     
-      var result_url = AF_SMART_SCRIPT_RESULT.clickURL;
-      if (result_url) {
-            document.getElementById('final_link').setAttribute('href', result_url);
-            // QRコードid="qr"
-            window.AF_SMART_SCRIPT.displayQrCode("my_qr_code_div_id");
-
-            // imp発火させる
-            window.AF_SMART_SCRIPT.fireImpressionsLink();            
-      }
-      // 生成された送信URLを、LP内のどのaタグに埋めるかを指示
+    // 生成されたOneLinkをLP内の特定のCTA URLタグ（aタグ）に置き換える指示
+    if (AF_SMART_SCRIPT_RESULT && AF_SMART_SCRIPT_RESULT.clickURL) {
+        document.querySelectorAll('a[id="final_url"]').forEach(function (e) {  // 生成された最終URLをLP内の aタグのどのリンクと置き換えるのか、指示してください。       
+            e.setAttribute('href', AF_SMART_SCRIPT_RESULT.clickURL);
+        });
+        window.AF_SMART_SCRIPT.fireImpressionsLink();  // imp発火させる
+        window.AF_SMART_SCRIPT.displayQrCode("qr");   // qrコード生成
+    };
+    
 
   </script>
