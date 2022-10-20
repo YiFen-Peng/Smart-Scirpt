@@ -32,8 +32,8 @@
     
       var result_url = AF_SMART_SCRIPT_RESULT.clickURL;
       if (result_url) {
-            document.getElementById(‘final_link').setAttribute('href', result_url);      
-            window.AF_SMART_SCRIPT.displayQrCode(“qr”);
+            document.getElementById('final_link').setAttribute('href', result_url);      
+            window.AF_SMART_SCRIPT.displayQrCode("qr");
             window.AF_SMART_SCRIPT.fireImpressionsLink();   // [オプション]impression計測(ページロードの度に計測される) 
     }
 
