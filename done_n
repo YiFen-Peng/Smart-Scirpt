@@ -3,7 +3,7 @@
     document.getElementById('input_url').innerHTML = window.location.href;
 
     //OneLink引数
-    var oneLinkURL = "https://nanaco.onelink.me/l1zE";
+    var oneLinkURL = "OneLink_template;
     var mediaSource = {keys:["utm_source","pid"],defaultValue:"source_lp"};
     var campaign = {keys:["utm_campaign","c"],defaultValue:"campaign_lp"};
     var adSet = {keys:["utm_content","af_adset"],defaultValue:"content_lp"};
