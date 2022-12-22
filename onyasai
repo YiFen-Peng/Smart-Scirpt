@@ -1,5 +1,4 @@
-<script type="text/javascript" src="onelink-smart-script-2-2.js"></script>
-  <script>
+<script>
 
 //OneLink引数
 var oneLinkURL = "https://onyasai.onelink.me/IKOB";
