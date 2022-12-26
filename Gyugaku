@@ -21,10 +21,11 @@ AF_SMART_SCRIPT_RESULT = window.AF_SMART_SCRIPT.generateOneLinkURL({
         ]
     }
 });
-    if (AF_SMART_SCRIPT_RESULT && AF_SMART_SCRIPT_RESULT.clickURL) {
-        document.querySelectorAll('a[id="final_url"]').forEach(function (e) {  // 生成された最終URLをLP内のaタグのどのリンクと置き換えるのか、指示してください。       
-            e.setAttribute('href', AF_SMART_SCRIPT_RESULT.clickURL);
-        });
-        window.AF_SMART_SCRIPT.displayQrCode("qr");
-    };
-</script>
+        if (AF_SMART_SCRIPT_RESULT && AF_SMART_SCRIPT_RESULT.clickURL) {
+            var els = document.getElementsByClassName("final_url");
+    
+            Array.from(els).forEach((e) => {
+                e.setAttribute('href', AF_SMART_SCRIPT_RESULT.clickURL);
+            });
+        };
+    </script>
