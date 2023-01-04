@@ -24,7 +24,7 @@ AF_SMART_SCRIPT_RESULT = window.AF_SMART_SCRIPT.generateOneLinkURL({
         if (AF_SMART_SCRIPT_RESULT && AF_SMART_SCRIPT_RESULT.clickURL) {
             var els = document.getElementsByClassName("final_url");
     
-            Array.from(els).forEach((e) => {
+            Array.from(els).forEach(function(e) {
                 e.setAttribute('href', AF_SMART_SCRIPT_RESULT.clickURL);
             });
         };
