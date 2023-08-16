@@ -1,7 +1,7 @@
 
 // The initialization code follows the Smart Script code below
 
-<script src="/assets/javascripts/appsflyer/onelink-smart-script-latest.js?7dbdd72d5e688ae2"></script>
+<script src="https://onelinksmartscript.appsflyer.com/onelink-smart-script-latest.js"></script>
 
 //OneLink引数
 var oneLinkURL = "https://famipay.onelink.me/sVp0";
